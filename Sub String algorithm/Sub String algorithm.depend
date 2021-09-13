@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1631567540 source:c:\users\bongione\documents\codeblocks projects\sub string algorithm\main.cpp
+	<iostream>
+
+1631569427 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\sub string algorithm\main.cpp
+	<iostream>
+	<cstring>
+
