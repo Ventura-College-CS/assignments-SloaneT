@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1632345790 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment1-1\assignment1-1_searchbinaryfile\main.cpp
+	<iostream>
+	<fstream>
+
