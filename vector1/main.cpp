@@ -69,7 +69,7 @@ void deleteOne(vector<int> numbers, int new_number)
 			break;
 	}
 
-	if ( it > numbers.end())
+	if ( it == numbers.end())
 		cout << "Value not found -- cannot be deleted \n";
 	else
 		numbers.erase(it);

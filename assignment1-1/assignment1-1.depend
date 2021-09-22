@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1632343121 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment1-1\main.cpp
+	<iostream>
+	<fstream>
+
