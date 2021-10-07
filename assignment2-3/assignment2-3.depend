@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1633546814 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment2-3\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<algorithm>
+
