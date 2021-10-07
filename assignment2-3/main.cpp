@@ -7,7 +7,7 @@ using namespace std;
 double *makeNumbers(int N);
 void printNumbers(double *, int N);
 void sortNumbers(double *, int N);
-void deleteNumbers(double *ptr);
+void deleteNumbers(double *);
 
 int main()
 {
@@ -18,6 +18,7 @@ int main()
 	printNumbers(ptr, N);
 	sortNumbers(ptr, N);
 	printNumbers(ptr, N);
+	deleteNumbers(ptr);
 
 
 }
