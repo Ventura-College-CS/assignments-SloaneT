@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1633655155 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\quiz_question2_part2\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+
+1633717594 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\quiz__pointers_question2_part2\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+
