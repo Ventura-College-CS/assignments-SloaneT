@@ -26,7 +26,7 @@ int main()
     printArray(array, N);
 
     compareLinearSearch(array, N, target);
-    compareBinarySearch(array, N, target);
+    compareBinarySearch(array, N, target); // After converting to separate function, returns average of 9 comparisons instead of 8
 
     }
 
