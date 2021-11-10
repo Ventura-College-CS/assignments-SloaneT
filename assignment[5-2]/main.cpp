@@ -2,10 +2,7 @@
 #include "stack1.hpp"
 #include "Postfix.h"
 
-
 using namespace std;
-
-int calculate(int, int, char);
 
 int main()
 {
