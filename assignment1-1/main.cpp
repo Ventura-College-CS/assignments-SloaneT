@@ -13,6 +13,7 @@ struct Student {
 };
 
 void printStudent(Student s);
+void searchStudent(Student *s, int target);
 
 int main()
 {
@@ -30,6 +31,8 @@ int main()
 		exit(0);
 	}
 
+
+
 	for(int i=0; i<10; i++)
 	{
 		ifs >> s[i].id ;
@@ -42,6 +45,7 @@ int main()
 		ofs.write( (char *)&s[i], sizeof(s[i]) );
 	}
 
+		searchStudent(s , 10010);
 }
 
 void printStudent(Student s)
@@ -52,6 +56,14 @@ void printStudent(Student s)
 	cout << s.sum << " " << s.avg << endl;
 }
 
-
+void searchStudent(Student s[], int target)
+{
+    for (int i = 0; i < 10; i++){
+        if (s[i].id == target){
+            cout << "Target acquired.  Name: " << s[i].sname << endl;
+            break;
+        }
+    }
+}
 
 

@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1636581556 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-2]\main.cpp
+	<iostream>
+	"stack1.hpp"
+	"Postfix.h"
+
+1636577516 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-2]\stack1.hpp
+	<vector>
+
+1636581036 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-2]\postfix.h
+	<iostream>
+	<string>
+
+1636580842 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-2]\postfix.cpp
+	"Postfix.h"
+	"stack1.hpp"
+	<iostream>
+	<string>
+
+1636580842 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-2]\postfix.cpp
+	"Postfix.h"
+	"stack1.hpp"
+	<iostream>
+	<string>
+
