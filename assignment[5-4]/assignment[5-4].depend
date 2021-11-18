@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1637197321 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\main.cpp
+	<iostream>
+	"VectorQueue.h"
+
+1637090966 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\vectorqueue.cpp
+	"VectorQueue.h"
+	<iostream>
+	<list>
+
+1637090526 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\vectorqueue.hpp
+	<iostream>
+	<list>
+
+1637091250 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\vectorqueue.h
+	<iostream>
+	<list>
+	<vector>
+
