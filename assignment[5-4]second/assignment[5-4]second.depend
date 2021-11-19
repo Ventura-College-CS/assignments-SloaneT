@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1637353550 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]second\main.cpp
+	<iostream>
+	"vector.hpp"
+	<vector>
+	<ctime>
+	<cstdlib>
+
+1637352787 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]second\vector.hpp
+	<iostream>
+	<list>
+	<vector>
+	"vector.hpp"
+	<iostream>
+	<vector>
+
+1637261888 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]second\vector.cpp
+

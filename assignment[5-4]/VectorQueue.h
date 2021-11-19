@@ -18,6 +18,7 @@ public:
 	T dequeue();
 	bool isEmpty() const;
 	T front() const;
+	int vectorSize() const;
 };
 
 

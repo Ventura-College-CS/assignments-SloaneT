@@ -3,16 +3,16 @@
 	<iostream>
 	"VectorQueue.h"
 
-1637090966 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\vectorqueue.cpp
+1637198497 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\vectorqueue.cpp
 	"VectorQueue.h"
 	<iostream>
-	<list>
+	<vector>
 
 1637090526 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\vectorqueue.hpp
 	<iostream>
 	<list>
 
-1637091250 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\vectorqueue.h
+1637198497 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\assignment[5-4]\vectorqueue.h
 	<iostream>
 	<list>
 	<vector>
