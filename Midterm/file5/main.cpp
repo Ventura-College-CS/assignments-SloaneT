@@ -8,18 +8,18 @@ class Student {
 	private:
 		int id;
 		string sname;
-		double score[3];
+		double score[3]; //an array of 3 doubles
   public:
 		Student()
 		{
-		    id = 0;
-            sname = "";
-            for(int i = 0; i < 3; i++)
+		    id = 0; //default value = 0
+            sname = ""; // default value is empty
+            for(int i = 0; i < 3; i++) //for loop used to assign all three scores a default value 0
             {
                 score[i] = 0;
             }
 		}
-		Student(int i, string s, double *sc)
+		Student(int i, string s, double *sc) //accepts an integer, a string, and a pointer to the address of score
 		{
 			id = i;
 			sname = s;
@@ -65,13 +65,14 @@ void printStudent(Student &s)
 
 int main()
 {
-	VectorQueue<Student, 5> studentQueue; //creates a vector queue of type Student, with 10 spaces
+	VectorQueue<Student, 5> studentQueue; //creates a vector queue of type Student, with 5 spaces
 
-	Student s[5]; // creates an array of 10 empty student objects
+	Student s[5]; // creates an array of 5 empty student objects
 
 
 
-	for(int i = 0; i < 5; i++){
+	for(int i = 0; i < 5; i++) //for loop used to receive student information
+    {
         int id;
         string name;
         double score[3];
@@ -91,17 +92,17 @@ int main()
     cout << "Current size of student queue: " << studentQueue.vsize() << endl;
 
 	double sc[3] = {100.0, 99.9, 100.01}; //creating score arrays
-	Student s1(100, "John", sc); //enqueue a student when queue is full
-	studentQueue.enqueue(s1);
+	Student s1(100, "John", sc); //create a sixth student
+	studentQueue.enqueue(s1); //attempt to enqueue when queue is full
 
-	for(int i = 0; i < 5; i++)
+	for(int i = 0; i < 5; i++) //dequeue all five students
 	{
 		Student popstudent = studentQueue.dequeue();
 		printStudent(popstudent);
 	}
 
     Student extraPop = studentQueue.dequeue();
-    printStudent(extraPop); //dequeue a student when queue is empty
+    printStudent(extraPop); //attempt to dequeue a student when queue is empty
 
 
 }

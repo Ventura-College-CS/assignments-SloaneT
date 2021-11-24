@@ -64,14 +64,14 @@ T VectorQueue<T, size>::dequeue()
 
     T el = queue.front(); // element of type T is assigned as the first member of queue
     queue.erase(queue.begin()); // erases the value at the first iteration
-	return el;
+	return el; //returns the element which was just erased
     }
 
 }
 template <class T, int size>
 T VectorQueue<T, size>::front() const
 {
-	return queue.front();
+	return queue.front(); //returns the element at the front of the queue
 }
 
 
