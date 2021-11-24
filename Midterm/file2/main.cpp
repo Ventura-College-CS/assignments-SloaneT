@@ -9,8 +9,8 @@ public:
 	int operator()(const int &lhs, const int &rhs) //override () operator, takes references of both operands, assigns them to lhs and rhs
 	{
 		int l, r; //declare two int variables, l and r
-		l = lhs; //l is equal to the remainder of lhs / 10
-		r = rhs; //r is equal to remainder of rhs / 10
+		l = lhs; // Removing modulo appeared to make the class work as expected
+		r = rhs; //
 		return l < r; // gives priority to larger number
 	}
 };
