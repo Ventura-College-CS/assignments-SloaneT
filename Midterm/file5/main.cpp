@@ -18,9 +18,6 @@ class Student {
             {
                 score[i] = 0;
             }
-//            score[0] = 0;
-//            score[1] = 0;
-//            score[2] = 0;
 		}
 		Student(int i, string s, double *sc)
 		{
@@ -30,9 +27,6 @@ class Student {
             {
                 score[i] = sc[i];
             }
-//			score[0] = sc[0];
-//			score[1] = sc[1];
-//			score[2] = sc[2];
 		}
 		void setValues(int i, string s, double *sc)
 		{
@@ -42,9 +36,6 @@ class Student {
             {
                 score[i] = sc[i];
             }
-//			score[0] = sc[0];
-//			score[1] = sc[1];
-//			score[2] = sc[2];
 		}
 		int getID()
 		{
@@ -70,9 +61,6 @@ void printStudent(Student &s)
     {
         cout << "Score " << i + 1 << ": " << sc[i] << endl;
     }
-//	cout << "Score 0 " << sc[0] << endl;
-//	cout << "Score 1" << sc[1] << endl;
-//	cout << "score 2" << sc[2] << endl;
 }
 
 int main()
