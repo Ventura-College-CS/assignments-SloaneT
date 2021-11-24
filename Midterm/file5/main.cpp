@@ -14,25 +14,37 @@ class Student {
 		{
 		    id = 0;
             sname = "";
-            score[0] = 0;
-            score[1] = 0;
-            score[2] = 0;
+            for(int i = 0; i < 3; i++)
+            {
+                score[i] = 0;
+            }
+//            score[0] = 0;
+//            score[1] = 0;
+//            score[2] = 0;
 		}
 		Student(int i, string s, double *sc)
 		{
 			id = i;
 			sname = s;
-			score[0] = sc[0];
-			score[1] = sc[1];
-			score[2] = sc[2];
+			for(int i = 0; i < 3; i++)
+            {
+                score[i] = sc[i];
+            }
+//			score[0] = sc[0];
+//			score[1] = sc[1];
+//			score[2] = sc[2];
 		}
 		void setValues(int i, string s, double *sc)
 		{
 			id = i;
 			sname = s;
-			score[0] = sc[0];
-			score[1] = sc[1];
-			score[2] = sc[2];
+			for(int i = 0; i < 3; i++)
+            {
+                score[i] = sc[i];
+            }
+//			score[0] = sc[0];
+//			score[1] = sc[1];
+//			score[2] = sc[2];
 		}
 		int getID()
 		{
@@ -54,9 +66,13 @@ void printStudent(Student &s)
 	cout << "S ID " << s.getID()<< endl;
 	cout << "S name " << s.getName()<< endl;
 	sc = s.getScore();
-	cout << "Score 0 " << sc[0] << endl;
-	cout << "Score 1" << sc[1] << endl;
-	cout << "score 2" << sc[2] << endl;
+	for(int i = 0; i < 3; i++)
+    {
+        cout << "Score " << i + 1 << ": " << sc[i] << endl;
+    }
+//	cout << "Score 0 " << sc[0] << endl;
+//	cout << "Score 1" << sc[1] << endl;
+//	cout << "score 2" << sc[2] << endl;
 }
 
 int main()
@@ -83,6 +99,8 @@ int main()
         s[i].setValues(id, name, score);
 	    studentQueue.enqueue(s[i]);
 	}
+
+    cout << "Current size of student queue: " << studentQueue.vsize() << endl;
 
 	double sc[3] = {100.0, 99.9, 100.01}; //creating score arrays
 	Student s1(100, "John", sc); //enqueue a student when queue is full
