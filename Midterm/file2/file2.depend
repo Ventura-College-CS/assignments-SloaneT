@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1637786696 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\midterm\file2\main.cpp
+	<iostream>
+	<vector>
+	<queue>
+
