@@ -1,8 +1,7 @@
 #include <iostream>
 #include "vector.hpp"
 #include <vector>
-#include <ctime>
-#include <cstdlib>
+
 using namespace std;
 
 class Student {
@@ -62,34 +61,13 @@ void printStudent(Student &s)
 
 int main()
 {
+	VectorQueue<Student, 5> studentQueue; //creates a vector queue of type Student, with 10 spaces
 
-    srand((int)time(0));
-
-	VectorQueue<int, 10> arrayQueue;
-
-	for (int i = 0; i < 10; i++)
-    {
-        int n = (rand() % 100) + i; //assigns n to a random value
-        arrayQueue.enqueue(n);  //enqueues the new value of n
-    }
-    for (int i = 0; i < 10; i++)
-    {
-        int popnumber = arrayQueue.dequeue(); //assigns the front element of queue to an int variable
-        cout << popnumber << endl;
-    }
+	Student s[5]; // creates an array of 10 empty student objects
 
 
 
-
-	VectorQueue<Student, 10> studentQueue; //creates a vector queue of type Student, with 10 spaces
-
-
-
-	Student s[10]; // creates an array of 10 empty student objects
-
-
-
-	for(int i = 0; i < 3; i++){
+	for(int i = 0; i < 5; i++){
         int id;
         string name;
         double score[3];
@@ -110,7 +88,7 @@ int main()
 	Student s1(100, "John", sc); //enqueue a student when queue is full
 	studentQueue.enqueue(s1);
 
-	for(int i = 0; i < 3; i++)
+	for(int i = 0; i < 5; i++)
 	{
 		Student popstudent = studentQueue.dequeue();
 		printStudent(popstudent);
@@ -118,8 +96,6 @@ int main()
 
     Student extraPop = studentQueue.dequeue();
     printStudent(extraPop); //dequeue a student when queue is empty
-
-
 
 
 }

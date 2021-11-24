@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1637790747 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\midterm\file5\main.cpp
+	<iostream>
+	"vector.hpp"
+	<vector>
+
+1637790828 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\midterm\file5\vector.hpp
+	<iostream>
+	<list>
+	<vector>
+	"vector.hpp"
+	<iostream>
+	<vector>
+
