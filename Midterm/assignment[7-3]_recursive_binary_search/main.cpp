@@ -1,5 +1,7 @@
 // Recursive Binary Search
 // This program borrows heavily from https://www.geeksforgeeks.org/binary-search/
+// Compared with iterative binary search, the recursive version is simpler to implement.
+// However, it has a larger space complexity of O(log n) compared with the iterative version's O(1)
 #include <iostream>
 using namespace std;
 
@@ -7,21 +9,22 @@ using namespace std;
 //accepts a sorted array arr[l..r] and returns location of target if present, else -1
 int binarySearch(int arr[], int l, int r, int target)
 {
-    if (r >= l) {
-        int mid = l + (r - l) / 2; // mid = leftmost index + (rightmost - 1) / 2
+    if (r >= l)
+    {
+        int mid = (l + r) / 2; // mid = (leftmost index + rightmost index) / 2
 
-        // If the element is present at the middle
+        // If the target is present at the middle
         if (arr[mid] == target)
             return mid;
 
         // If target is smaller than mid, then
         // it can only be present in left sub-array
         if (target < arr[mid])
-            return binarySearch(arr, l, mid - 1, target); //replaces r with mid-1
+            return binarySearch(arr, l, mid - 1, target); //implements selfsame function, but replaces r with mid-1
 
         // Else the element can only be present
         // in right sub-array
-        return binarySearch(arr, mid + 1, r, target); //replaces l with mid+1
+        return binarySearch(arr, mid + 1, r, target); //implements selfsame function, replaces l with mid+1
     }
 
     // We reach here when element is not
@@ -29,8 +32,9 @@ int binarySearch(int arr[], int l, int r, int target)
     return -1;
 }
 
-int main(void)
+int main()
 {
+    cout << 7/2 << endl;
     int arr[] = { 2, 3, 4, 10, 40 };
     int target = 10;
     //divide the size in bytes of entire array
