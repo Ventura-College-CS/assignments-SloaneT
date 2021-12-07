@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <string>
 using namespace std;
 
 class Course
@@ -56,10 +55,12 @@ void printCourse(Course &c)
         cout << "Course ID: " << c.getID() << endl;
         cout << "Course Name: " << c.getName() << endl;
         cout << "Course Credits: " << c.getCredits() << endl;
+        cout << " " << endl;
     }
 
 void qsort(vector<Course>, int, int);
 int partition(vector<Course>, int, int);
+int binarySearch(vector<Course> vec, int l, int r, int target);
 
 int main()
 {
@@ -93,19 +94,20 @@ int main()
 
         for(int i = 0; i < 10; i++)
     {
-        cout << courseVector[i].getCredits() << endl;
-        cout << courseVector[i].getName() << endl;
-        cout << courseVector[i].getID() << endl;
+        printCourse(courseVector[i]);
     }
 
-    qsort(courseVector, 0, 9);
+    const int N = 10;
+
+    qsort(courseVector, 0, N-1); // does nothing
+
+
 
             for(int i = 0; i < 10; i++)
     {
-        cout << courseVector[i].getCredits() << endl;
-        cout << courseVector[i].getName() << endl;
-        cout << courseVector[i].getID() << endl;
+        printCourse(courseVector[i]);
     }
+    cout << binarySearch(courseVector, 0, 9, 949);
 
     return 0;
 }
@@ -126,15 +128,16 @@ void qsort(vector<Course> vec, int first, int last)
 
 int partition(vector<Course> vec, int first, int last)
 {
-	int pivot = vec[last]; // cannot convert 'Course' to 'int'
-	int i = -1;
-	for (int j = 0; j < last; j++)
+	Course pivot = vec[last]; //pivot is set to the vector member ID value at index "last"
+	int i = (first - 1);
+	for (int j = first; j < last; j++) //iterates from 0 until either pivot_idx-1, or last
 	{
-		if (vec[j].getID() < vec[pivot].getID())
-			swap(vec[i + 1], vec[j]);
+		if (vec[j].getID() < pivot.getID()) //if courseVector ID at index "j" is less than courseVector ID at index "last"
+			swap(vec[++i], vec[j]);
+			 //swap courseVector member at index 0 with courseVector member at index j
 	}
-	swap(vec[i + 1], vec[last]);
-	return i + 1;
+	swap(vec[i + 1], vec[last]); // when for loop ends, swap courseVector member at index 0
+	return (i + 1); // ***return 0?***
 }
 
 int binarySearch(vector<Course> vec, int l, int r, int target)
