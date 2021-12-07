@@ -59,8 +59,8 @@ void printCourse(Course &c)
     }
 
 void qsort(vector<Course>, int, int);
-int partition(vector<Course>, int, int);
-int binarySearch(vector<Course> vec, int l, int r, int target);
+int partition(vector<Course>&, int, int);
+int binarySearch(vector<Course>&, int l, int r, int target);
 
 int main()
 {
@@ -112,7 +112,7 @@ int main()
     return 0;
 }
 
-void qsort(vector<Course> vec, int first, int last)
+void qsort(vector<Course>& vec, int first, int last)
 {
 	int pivot_idx;
 
@@ -126,7 +126,7 @@ void qsort(vector<Course> vec, int first, int last)
 
 }
 
-int partition(vector<Course> vec, int first, int last)
+int partition(vector<Course>& vec, int first, int last)
 {
 	Course pivot = vec[last]; //pivot is set to the vector member ID value at index "last"
 	int i = (first - 1);
