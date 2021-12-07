@@ -60,26 +60,26 @@ void Postfix::printExpression() const // getter function for the expression in q
     cout << expression << endl;
 }
 
-int Postfix::evaluation()
+int Postfix::evaluation() // evaluates a postfix expression
 {
-    int size = expression.size();
-    const int N = 20;
-	const int offset = 48;
+    int size = expression.size(); // a size variable (type int) is declared, assigned to the length of the expression in bytes
+    const int N = 20; // N will be entered as an argument for the size of a Stack object
+	const int offset = 48; // expression will be evaluated as characters, not int, which have ASCII values starting at 48.  0 = ASCII 48, etc.
     char input;
-    Stack<int, N> stack;
+    Stack<int, N> stack; // creates a Stack object of minimum size N
 	int opr1, opr2, result;
-    for (int i = 0; i < expression.size(); i++)
+    for (int i = 0; i < expression.size(); i++) // from 0 until the end of the expression, based on its length in bytes
 	{
-		input = expression[i];
-		if (isdigit(input))
-			stack.push(int(input) - offset);
-		else if (isOperator(input))
+		input = expression[i]; // each given index of the expression is a char
+		if (isdigit(input)) // if the input is an operand (using Stack method)...
+			stack.push(int(input) - offset); // push the input, subtracting 48 to account for ASCII value, to the top of the stack...
+		else if (isOperator(input)) // otherwise, if the input is an operator (using Stack method)
 		{
-			opr1 = stack.pop();
-			opr2 = stack.pop();
-			result = calculate(opr1, opr2, input);
-			stack.push(result);
+			opr1 = stack.pop(); // remove the first operand from top of stack
+			opr2 = stack.pop(); // remove the second operand from top of stack
+			result = calculate(opr1, opr2, input);  // use Postfix method to calculate, using the top two operands along with the given operator
+			stack.push(result); // the current result is pushed to the stack.  This does not mean the calculation is finished.
 		}
 	}
-	cout << "The result of the expression is " << stack.pop() << endl;
+	cout << "The result of the expression is " << stack.pop() << endl; // once the for loop has finished, the final result is at the top of the stack, and can be popped
 }
