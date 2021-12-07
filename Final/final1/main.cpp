@@ -98,36 +98,44 @@ int main()
         cout << courseVector[i].getID() << endl;
     }
 
+    qsort(courseVector, 0, 9);
+
+            for(int i = 0; i < 10; i++)
+    {
+        cout << courseVector[i].getCredits() << endl;
+        cout << courseVector[i].getName() << endl;
+        cout << courseVector[i].getID() << endl;
+    }
 
     return 0;
 }
 
-//void qsort(vector<Course> vec, int first, int last)
-//{
-//	int pivot_idx;
-//
-//	// Base Condition
-//	if ( first >= last )
-//		return;
-//
-//	pivot_idx = partition(vec, first, last);
-//	qsort(vec, first, pivot_idx-1); // qsort(0, 3)-> q(0,0) -> q(3,3)
-//	qsort(vec, pivot_idx+1, last);  // qsort(2,3) ->
-//
-//}
-//
-//int partition(vector<Course> vec, int first, int last)
-//{
-//	int pivot = vec[last].getID();
-//	int i = -1;
-//	for (int j = 0; j < last; j++)
-//	{
-//		if (vec[j].getID() < pivot)
-//			swap(vec[i + 1].getID(), vec[j].getID());
-//	}
-//	swap(vec[i + 1].getID(), vec[last].getID());
-//	return i + 1;
-//}
+void qsort(vector<Course> vec, int first, int last)
+{
+	int pivot_idx;
+
+	// Base Condition
+	if ( first >= last )
+		return;
+
+	pivot_idx = partition(vec, first, last);
+	qsort(vec, first, pivot_idx-1); //
+	qsort(vec, pivot_idx+1, last);  //
+
+}
+
+int partition(vector<Course> vec, int first, int last)
+{
+	int pivot = vec[last]; // cannot convert 'Course' to 'int'
+	int i = -1;
+	for (int j = 0; j < last; j++)
+	{
+		if (vec[j].getID() < vec[pivot].getID())
+			swap(vec[i + 1], vec[j]);
+	}
+	swap(vec[i + 1], vec[last]);
+	return i + 1;
+}
 
 int binarySearch(vector<Course> vec, int l, int r, int target)
 {
