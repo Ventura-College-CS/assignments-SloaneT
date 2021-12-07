@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1638913200 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\final\final3\main.cpp
+	<iostream>
+	"stack1.hpp"
+	"Postfix.h"
+
+1638913959 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\final\final3\stack1.hpp
+	<vector>
+
+1638913249 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\final\final3\postfix.h
+	<iostream>
+	<string>
+
