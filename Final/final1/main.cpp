@@ -77,13 +77,23 @@ int main()
 
 
     courseVector.push_back(c1);
+    courseVector.push_back(c2);
+    courseVector.push_back(c3);
+    courseVector.push_back(c4);
+    courseVector.push_back(c5);
+    courseVector.push_back(c6);
+    courseVector.push_back(c7);
+    courseVector.push_back(c8);
+    courseVector.push_back(c9);
+    courseVector.push_back(c10);
 
-    //    for(int i = 0; i < 10; i++)
-//    {
-//        cout << courseVector[i].getCredits() << endl;
-//        cout << courseVector[i].getName() << endl;
-//        cout << courseVector[i].getID() << endl;
-//    }
+
+        for(int i = 0; i < 10; i++)
+    {
+        cout << courseVector[i].getCredits() << endl;
+        cout << courseVector[i].getName() << endl;
+        cout << courseVector[i].getID() << endl;
+    }
 
 
     return 0;
