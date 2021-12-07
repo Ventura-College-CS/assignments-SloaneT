@@ -62,8 +62,28 @@ int main()
 {
     vector<Course> courseVector;
 
-    Course c1(12, "Sleeves", 13);
+    Course c1(134, "Sleeves", 3);
+    Course c2(343, "Bottles", 2);
+    Course c3(332, "Cowboys", 4);
+    Course c4(828, "Ropes", 1);
+    Course c5(133, "Vitality", 3);
+    Course c6(333, "Hunger", 4);
+    Course c7(777, "Lexicons", 2);
+    Course c8(949, "Orthography", 3);
+    Course c9(805, "Cataclysms", 4);
+    Course c10(123, "Expectations", 2);
 
+
+
+
+    courseVector.push_back(c1);
+
+    //    for(int i = 0; i < 10; i++)
+//    {
+//        cout << courseVector[i].getCredits() << endl;
+//        cout << courseVector[i].getName() << endl;
+//        cout << courseVector[i].getID() << endl;
+//    }
 
 
     return 0;
