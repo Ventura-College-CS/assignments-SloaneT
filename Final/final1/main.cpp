@@ -58,6 +58,9 @@ void printCourse(Course &c)
         cout << "Course Credits: " << c.getCredits() << endl;
     }
 
+void qsort(vector<Course>, int, int);
+int partition(vector<Course>, int, int);
+
 int main()
 {
     vector<Course> courseVector;
@@ -99,3 +102,54 @@ int main()
     return 0;
 }
 
+//void qsort(vector<Course> vec, int first, int last)
+//{
+//	int pivot_idx;
+//
+//	// Base Condition
+//	if ( first >= last )
+//		return;
+//
+//	pivot_idx = partition(vec, first, last);
+//	qsort(vec, first, pivot_idx-1); // qsort(0, 3)-> q(0,0) -> q(3,3)
+//	qsort(vec, pivot_idx+1, last);  // qsort(2,3) ->
+//
+//}
+//
+//int partition(vector<Course> vec, int first, int last)
+//{
+//	int pivot = vec[last].getID();
+//	int i = -1;
+//	for (int j = 0; j < last; j++)
+//	{
+//		if (vec[j].getID() < pivot)
+//			swap(vec[i + 1].getID(), vec[j].getID());
+//	}
+//	swap(vec[i + 1].getID(), vec[last].getID());
+//	return i + 1;
+//}
+
+int binarySearch(vector<Course> vec, int l, int r, int target)
+{
+    if (r >= l)
+    {
+        int mid = (l + r) / 2; // mid = (leftmost index + rightmost index) / 2
+
+        // If the target is present at the middle
+        if (vec[mid].getID() == target)
+            return mid;
+
+        // If target is smaller than mid, then
+        // it can only be present in left sub-array
+        if (target < vec[mid].getID())
+            return binarySearch(vec, l, mid - 1, target); //implements selfsame function, but replaces r with mid-1
+
+        // Else the element can only be present
+        // in right sub-array
+        return binarySearch(vec, mid + 1, r, target); //implements selfsame function, replaces l with mid+1
+    }
+
+    // We reach here when element is not
+    // present in array
+    return -1;
+}
