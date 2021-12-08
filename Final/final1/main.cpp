@@ -1,19 +1,28 @@
+
+// Please note, the following code is intended to answer Final Exam questions 1 and 2.
+
+// First it implements a recursive quick sort function for use on a custom class Course. (Question 2)
+// After sorting a vector of type Course based on ID,
+//  the program uses a custom binary search function to search the vector using ID as a parameter. (Question 1)
+
 #include <iostream>
 #include <vector>
 #include "Course.hpp"
 using namespace std;
 
 
-void printCourse(Course &c)
+void printCourse(Course &c) // Pass a Course object by reference as an argument
     {
-        cout << "Course ID: " << c.getID() << endl;
+        cout << "Course ID: " << c.getID() << endl; // Uses getters to access object attributes
         cout << "Course Name: " << c.getName() << endl;
         cout << "Course Credits: " << c.getCredits() << endl;
         cout << " " << endl;
     }
 
+// Initializing functions
 void qsort(vector<Course>&, int, int);
 int partition(vector<Course>&, int, int);
+
 int binarySearch(vector<Course>, int l, int r, int target);
 
 int main()
@@ -37,24 +46,22 @@ int main()
     courseVector.insert(courseVector.end(), { c1, c2, c3, c4, c5, c6, c7, c8, c9, c10});
 
 
-        for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 10; i++) // Loop used to print the values of each object in the vector before sorting
     {
         printCourse(courseVector[i]);
     }
 
-    const int N = 10;
+    const int N = 10; // const is used to ensure that N will not be altered by the program
 
-    qsort(courseVector, 0, N-1); //
+    qsort(courseVector, 0, N-1); // Calling the quick sort function on courseVector, with indexes 0 and 9 as 'first' and 'last' arguments, respectively
 
-
-
-            for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 10; i++) // Print values of each object in vector after sorting
     {
         printCourse(courseVector[i]);
     }
 
 
-    int result = binarySearch(courseVector, 0, 9, 949);
+    int result = binarySearch(courseVector, 0, 9, 949); // A basic set of instructions to help make the result of binarySearch more readable
 
     if(result != -1)
     {
@@ -67,32 +74,34 @@ int main()
     return 0;
 }
 
-void qsort(vector<Course>& vec, int first, int last)
+void qsort(vector<Course>& vec, int first, int last) // Very important to pass the courseVector by reference, to modify the actual values
 {
-	int pivot_idx;
+	int pivot_idx; // The pivot is used to divide the vector into increasingly smaller sections which can be sorted individually
 
-	// Base Condition
-	if ( first >= last )
+	// Base Condition, prevents algorithm from running eternally
+	if ( first >= last ) // If the leftmost index is >= the rightmost, then there is only one value remaining and division is no longer possible
 		return;
 
-	pivot_idx = partition(vec, first, last);
-	qsort(vec, first, pivot_idx-1); //
-	qsort(vec, pivot_idx+1, last);  //
+	pivot_idx = partition(vec, first, last); // the pivot is assigned to the result of the partition function
+	qsort(vec, first, pivot_idx-1); // Sorting the vector on the left side of the pivot index
+	qsort(vec, pivot_idx+1, last);  // Sorting the vector on the right side of the pivot index
 
 }
 
 int partition(vector<Course>& vec, int first, int last)
 {
-	Course pivot = vec[last]; //pivot is set to the vector member ID value at index "last"
+	Course pivot = vec[last]; //pivot is set to the vector member ID value at index "last", aka the rightmost index
 	int i = (first - 1);
-	for (int j = first; j < last; j++) //iterates from 0 until either pivot_idx-1, or last
+	for (int j = first; j < last; j++) //iterates through each index of the partitioned vector
 	{
 		if (vec[j].getID() < pivot.getID()) //if courseVector ID at index "j" is less than courseVector ID at index "last"
 			swap(vec[++i], vec[j]);
-			 //swap courseVector member at index 0 with courseVector member at index j
+			 //swap courseVector member at index [++i] with courseVector member at index j.
+			 // ***i is incremented after each swap, very important***
 	}
-	swap(vec[i + 1], vec[last]); // when for loop ends, swap courseVector member at index 0
-	return (i + 1); // ***return 0?***
+	swap(vec[i + 1], vec[last]); // When for loop ends, swap courseVector member at the index of
+	// wherever the loop ended with the pivot
+	return (i + 1); // The iteration at which the loop ended becomes the new partition, aka the new pivot index
 }
 
 int binarySearch(vector<Course> vec, int l, int r, int target)
@@ -115,7 +124,6 @@ int binarySearch(vector<Course> vec, int l, int r, int target)
         return binarySearch(vec, mid + 1, r, target); //implements selfsame function, replaces l with mid+1
     }
 
-    // We reach here when element is not
-    // present in array
+    // We reach here if element is not present in array
     return -1;
 }
