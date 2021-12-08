@@ -1,54 +1,9 @@
 #include <iostream>
 #include <vector>
+#include "Course.hpp"
 using namespace std;
 
-class Course
-{
-private:
-        int ID;
-        string name;
-        int credits;
 
-public:
-    Course()
-    {
-        ID = 0;
-        name = "";
-        credits = 0;
-    }
-
-    Course(int id, string n, int c)
-    {
-        ID = id;
-        name = n;
-        credits = c;
-    }
-
-    void setValues(int i, string n, int c)
-    {
-        ID = i;
-        name = n;
-        credits = c;
-    }
-
-    int getID()
-    {
-        return ID;
-    }
-
-    string getName()
-    {
-        return name;
-    }
-
-    int getCredits()
-    {
-        return credits;
-    }
-
-
-
-};
 
 void printCourse(Course &c)
     {
@@ -58,9 +13,9 @@ void printCourse(Course &c)
         cout << " " << endl;
     }
 
-void qsort(vector<Course>, int, int);
+void qsort(vector<Course>&, int, int);
 int partition(vector<Course>&, int, int);
-int binarySearch(vector<Course>&, int l, int r, int target);
+int binarySearch(vector<Course>, int l, int r, int target);
 
 int main()
 {
