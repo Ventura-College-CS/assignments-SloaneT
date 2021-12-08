@@ -1,6 +1,9 @@
 # depslib dependency file v1.0
-1638897555 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\final\final1\main.cpp
+1638997697 source:c:\users\bongione\documents\cs v15 repo\assignments-sloanet\final\final1\main.cpp
 	<iostream>
 	<vector>
-	<string>
+	"Course.hpp"
+
+1638997074 c:\users\bongione\documents\cs v15 repo\assignments-sloanet\final\final1\course.hpp
+	<iostream>
 

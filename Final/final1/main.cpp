@@ -18,8 +18,9 @@ int binarySearch(vector<Course>, int l, int r, int target);
 
 int main()
 {
-    vector<Course> courseVector;
+    vector<Course> courseVector; //instantiate a vector of type Course to contain Course objects
 
+    // instantiate ten unique Course objects
     Course c1(134, "Sleeves", 3);
     Course c2(343, "Bottles", 2);
     Course c3(332, "Cowboys", 4);
@@ -31,16 +32,9 @@ int main()
     Course c9(805, "Cataclysms", 4);
     Course c10(123, "Expectations", 2);
 
-    courseVector.push_back(c1);
-    courseVector.push_back(c2);
-    courseVector.push_back(c3);
-    courseVector.push_back(c4);
-    courseVector.push_back(c5);
-    courseVector.push_back(c6);
-    courseVector.push_back(c7);
-    courseVector.push_back(c8);
-    courseVector.push_back(c9);
-    courseVector.push_back(c10);
+ //Initializer list: first argument is an iterator to the element before which we will insert our elements.
+ // Inserting before the end() iterator, therefore appending values to the end of vector
+    courseVector.insert(courseVector.end(), { c1, c2, c3, c4, c5, c6, c7, c8, c9, c10});
 
 
         for(int i = 0; i < 10; i++)
@@ -61,6 +55,7 @@ int main()
 
 
     int result = binarySearch(courseVector, 0, 9, 949);
+
     if(result != -1)
     {
         cout << "Target found at index: " << result;
