@@ -4,15 +4,17 @@
 #include <iostream>
 using namespace std;
 
+// Course is created and implemented within the same file because of its simplicity
+
 class Course
 {
 private:
-        int ID;
+        int ID; // course ID
         string name;
         int credits;
 
 public:
-    Course()
+    Course() // default constructor
     {
         ID = 0;
         name = "";
@@ -26,12 +28,14 @@ public:
         credits = c;
     }
 
-    void setValues(int i, string n, int c)
+    void setValues(int i, string n, int c) // setter for all values
     {
         ID = i;
         name = n;
         credits = c;
     }
+
+    // getters
 
     int getID()
     {

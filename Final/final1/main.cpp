@@ -4,7 +4,6 @@
 using namespace std;
 
 
-
 void printCourse(Course &c)
     {
         cout << "Course ID: " << c.getID() << endl;
@@ -32,9 +31,6 @@ int main()
     Course c9(805, "Cataclysms", 4);
     Course c10(123, "Expectations", 2);
 
-
-
-
     courseVector.push_back(c1);
     courseVector.push_back(c2);
     courseVector.push_back(c3);
@@ -54,7 +50,7 @@ int main()
 
     const int N = 10;
 
-    qsort(courseVector, 0, N-1); // does nothing
+    qsort(courseVector, 0, N-1); //
 
 
 
@@ -62,7 +58,16 @@ int main()
     {
         printCourse(courseVector[i]);
     }
-    cout << binarySearch(courseVector, 0, 9, 949);
+
+
+    int result = binarySearch(courseVector, 0, 9, 949);
+    if(result != -1)
+    {
+        cout << "Target found at index: " << result;
+    } else
+    {
+        cout << "Target not found." << endl;
+    }
 
     return 0;
 }
